@@ -8,8 +8,7 @@ const fromBase64 = value => {
     return buff.toString('ascii');
 }
 
-export default async(req, res) => {
-    
+export default async(req, res) => { 
    await doc.useServiceAccountAuth({
        client_email: process.env.SHEET_CLIENT_EMAIL,
        private_key: fromBase64(process.env.SHEET_PRIVATE_KEY)
