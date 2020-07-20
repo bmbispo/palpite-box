@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <React.Fragment>
             <div className={styles.wrapper}>
-                <div className='container mx-auto'>
+                <div className='flex-row mx-auto'>
                 <Link href='/'>
                     <a><img className='mx-auto p-4' src='/logo_palpitebox.png' alt='PalpiteBox' /></a>  
                 </Link>         

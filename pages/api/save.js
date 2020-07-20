@@ -42,11 +42,13 @@ export default async (req, res) => {
          await sheet.addRow({
             Nome: data.Nome,
             Email: data.Email,
-            Whatsapp: data.Whatsapp,
+            Telefone: data.Telefone,
             Cupom,
             Promo, 
             'Data Preenchimento': moment().format('DD/MM/YYYY HH:mm:ss'),
-            Nota: parseInt(data.Nota)
+            Nota: parseInt(data.Nota),
+            Sugestaocritica: data.Sugestaocritica
+
      
         })
         res.end(JSON.stringify({

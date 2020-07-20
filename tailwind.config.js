@@ -3,7 +3,12 @@ module.exports = {
   theme: {
     extend: {},
   },
-  variants: {},
+  variants: {
+    // ...
+    flexDirection: ['responsive'],
+    flexDirection: ['responsive', 'hover', 'focus'],
+  },
   plugins: []
+
 }
 

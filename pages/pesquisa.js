@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
 import PageTitle from '../components/PageTitle'
+import InputMask from 'react-input-mask'
 
 const Pesquisa = () => {
     const [ form, setForm ] = useState({
          Nome: '',
          Email: '',
-         Whatsapp: '',
-         nota: 0
+         Telefone: '',
+         nota: 0,
+         Sugestaocritica:''
+
     })
     const notas = [0, 1, 2, 3, 4, 5]
     const [ sucess, setSuccess ] = useState(false)
@@ -32,27 +35,27 @@ const Pesquisa = () => {
               [key]: value 
           }))
         }
+
     return (
-        <div className='pt-6'>
+        <div className='sm:flex-col'>
             <PageTitle title='Pesquisa'/>
             <h1 className='text-center font-bold my-6 text-2x1'>Críticas e sugestões</h1>
 
-            {!sucess && <div className='w-1/5 mx-auto'>
-                <label className='font-bold'>Seu Nome:</label>
-                <input type='text' className='px-12 py-4 block shadow bg-blue-100 my-2 rounded' placeholder='Nome' onChange={onChange} name='Nome' value={form.Nome}/>
+            {!sucess && <div className='w-1/5 flex-row mx-auto'>
+                <label className=' text-center font-bold'>Seu Nome:</label>
+                <input type='text' className='flex-row px-12 py-4 block shadow bg-blue-200 my-2 rounded' placeholder='Nome' onChange={onChange} name='Nome' value={form.Nome}/>
             
-                <label className='font-bold'>Email:</label>
-                <input type='text' className='px-12 py-4 block shadow bg-blue-100 my-2 rounded' placeholder='Email' onChange={onChange} name='Email' value={form.Email}/>
+                <label className=' text-center font-bold'>Email:</label>
+                <input type='text' className=' flex-row px-12 py-4 block shadow bg-blue-200 my-2 rounded' placeholder='Email' onChange={onChange} name='Email' value={form.Email}/>
             
-                <label className='font-bold'>Whatsapp:</label>
-                <input type='text' className='px-12 py-4 block shadow bg-blue-100 my-2 rounded' placeholder='Whatsapp' onChange={onChange} name='Whatsapp' value={form.Whatsapp}/>
-            
-                <label className='font-bold'>Sua sugestão ou crítica:</label>
-                <input type='text' className='px-12 py-10 block shadow bg-blue-100 my-2 rounded' />
+                <label className=' text-center font-bold'>Telefone:</label>
+                <InputMask className='flex-row px-12 py-4 block shadow bg-blue-200 my-2 rounded' type="tel" name="telefone" placeholder="Telefone:" mask="(99) 99999-9999" onChange={onChange} name='Telefone' value={form.Telefone}/>
+                <label className='text-center font-bold'>Sua sugestão ou crítica:</label>
+                <textarea className='flex-row px-12 py-8 shadow bg-blue-200 my-2 rounded' name="mensagem" placeholder="Mensagem:" onChange={onChange} name='Sugestaocritica' value={form.Sugestaocritica}/>
                 <label className='font-bold'>Nota:</label>
                 <div className='flex'>
                 { notas.map(nota => {
-                   return (<label className='text-center block w-1/6'>
+                   return( <label className='text-center block w-1/6'>
                                 {nota}<br/>
                                 <input type='radio' name='Nota' value={nota} onChange={onChange}/>
                             </label>)

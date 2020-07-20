@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
     return(
         <div className='bg-gray-700 p-1'>
-            <div className='container mx-auto text-center font-bold text-white'>
+            <div className='flex-row mx-auto text-center font-bold text-white'>
                 Projeto desenvolvido por:
                 <a className='px-2'>Breno Bispo</a> 
                 <a href='https://www.instagram.com/brenombispo'>
